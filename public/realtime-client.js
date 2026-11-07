@@ -43,7 +43,7 @@
       };
       localStream.getTracks().forEach(track => pc.addTrack(track, localStream));
       dc = pc.createDataChannel("oai-events");
-      dc.onopen = () => { connected = true; setButtons(true); setStatus("老师上线啦！可以直接说话，也可以随时打断老师。"); };
+      dc.onopen = () => { connected = true; setButtons(true); setStatus("老师上线啦！可以直接说话，也可以随时打断老师。"); dc.send(JSON.stringify({ type: "response.create", response: { instructions: "请用温柔、自然、简短的中文向孩子打招呼，告诉他可以直接和你说话。一次只问一个简单问题。", output_modalities: ["audio"] } })); };
       dc.onmessage = (event) => {
         try {
           const data = JSON.parse(event.data);
