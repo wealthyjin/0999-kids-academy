@@ -10,8 +10,8 @@ A lightweight, mobile-first Chinese children's learning game. Static files only.
 
 ## Deploy
 GitHub Actions workflow: `.github/workflows/pages.yml`.
-
-In repository Settings -> Pages, set Build and deployment source to **GitHub Actions**. Then push to `main` or run the workflow manually.
+GitHub Pages source is configured to **GitHub Actions**.
+Every push to `main` triggers deployment.
 
 Expected URL: https://wealthyjin.github.io/0999-kids-academy/
 
